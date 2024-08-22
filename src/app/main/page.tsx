@@ -19,6 +19,7 @@ import useBibleInfo from '@/stores/BibleInfo'
 import AIRPLANE_ICON from '@icon/airplane_icon.svg'
 import FIRE_ICON from '@icon/fire_icon.svg'
 import TRAFFICLIGHT_ICON from '@icon/trafficLight_icon.svg'
+import BIBLE_ICON from '@icon/bible_icon.svg'
 
 export default function Main() {
   const { firebaseInfo, setFirebaseUid, setFirebaseInfo, initFirebaseInfo } = useFirebaseStore()
@@ -121,7 +122,10 @@ export default function Main() {
       </div>
       {/* 캘린더 */}
       <div className="mb-10 flex w-full flex-col items-center px-4">
-        <div className="w-full py-5 text-lg font-light leading-none">나의 말씀 읽기</div>
+        <div className="flex items-center gap-x-1 w-full py-5">
+          <Image alt="icon" src={BIBLE_ICON} />
+          <span className="text-lg font-light leading-none">나의 말씀 읽기</span>
+        </div>
         <Calendar
           locale="ko"
           formatDay={(locale, data) => moment(data).format('DD')}
